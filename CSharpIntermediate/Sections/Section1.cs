@@ -95,12 +95,28 @@ public static class Section1
         }
     }
 
+    public class Employee
+    {
+        private DateTime _birhtdate;
+
+        public void SetBirhtdate(DateTime birhtdate)
+        {
+            _birhtdate = birhtdate;
+        }
+
+        public DateTime GetBirhtdate()
+        {
+            return _birhtdate;
+        }
+    }
+
     public static void Run()
     {
         Classes();
         Constructors();
         Methods();
         Fields();
+        AccessModifiers();
     }
 
     private static void Classes()
@@ -139,7 +155,7 @@ public static class Section1
         {
             var point = new Point(10, 20);
             point.Move(new Point(40, 60));
-            
+
             Console.WriteLine("Point is at ({0}, {1})", point.X, point.Y); //Output: Point is at (40, 60)
 
             point.Move(100, 200);
@@ -179,8 +195,19 @@ public static class Section1
 
         customer.Promote();
 
-        Console.WriteLine(customer.Orders.Count);
+        Console.WriteLine(customer.Orders.Count); //Output: 2
 
         Console.WriteLine("Finish -> Fields");
+    }
+
+    private static void AccessModifiers()
+    {
+        Console.WriteLine("Start -> Access Modifiers");
+
+        var employee = new Employee();
+        employee.SetBirhtdate(new DateTime(1999, 12, 16));
+        Console.WriteLine(employee.GetBirhtdate());  //Output: 12/16/1999 12:00:00 AM
+
+        Console.WriteLine("Finish -> Access Modifiers");
     }
 }
