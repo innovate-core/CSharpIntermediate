@@ -110,6 +110,28 @@ public static class Section1
         }
     }
 
+    public class User
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime Birthdate { get; private set; }
+
+        public User(DateTime birthdate)
+        {
+            Birthdate = birthdate;
+        }
+
+        public int Age
+        {
+            get
+            {
+                var timeSpan = DateTime.Now - Birthdate;
+                var years = timeSpan.Days / 365;
+                return years;
+            }
+        }
+    }
+
     public static void Run()
     {
         Classes();
@@ -117,6 +139,7 @@ public static class Section1
         Methods();
         Fields();
         AccessModifiers();
+        Properties();
     }
 
     private static void Classes()
@@ -209,5 +232,15 @@ public static class Section1
         Console.WriteLine(employee.GetBirhtdate());  //Output: 12/16/1999 12:00:00 AM
 
         Console.WriteLine("Finish -> Access Modifiers");
+    }
+
+    private static void Properties()
+    {
+        Console.WriteLine("Start -> Properties");
+
+        var user = new User(new DateTime(1999, 12, 16));
+        Console.WriteLine(user.Age); //Output: 25
+
+        Console.WriteLine("Finish -> Properties");
     }
 }
