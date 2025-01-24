@@ -132,6 +132,23 @@ public static class Section1
         }
     }
 
+    public class HttpCookie
+    {
+        private readonly Dictionary<string, string> _dictionary;
+
+        public HttpCookie()
+        {
+            _dictionary = new Dictionary<string, string>();
+        }
+
+        public string this[string key]
+        {
+            get { return _dictionary[key]; }
+            set { _dictionary[key] = value; }
+        }
+
+    }
+
     public static void Run()
     {
         Classes();
@@ -140,6 +157,7 @@ public static class Section1
         Fields();
         AccessModifiers();
         Properties();
+        Indexers();
     }
 
     private static void Classes()
@@ -242,5 +260,16 @@ public static class Section1
         Console.WriteLine(user.Age); //Output: 25
 
         Console.WriteLine("Finish -> Properties");
+    }
+
+    private static void Indexers()
+    {
+        Console.WriteLine("Start -> Indexers");
+
+        var cookie = new HttpCookie();
+        cookie["name"] = "Mykola";
+        Console.WriteLine(cookie["name"]);
+
+        Console.WriteLine("Finish -> Indexers");
     }
 }
