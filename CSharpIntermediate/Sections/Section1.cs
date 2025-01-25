@@ -268,7 +268,7 @@ public static class Section1
 
         var cookie = new HttpCookie();
         cookie["name"] = "Mykola";
-        Console.WriteLine(cookie["name"]);
+        Console.WriteLine(cookie["name"]); //Output: Mykola
 
         Console.WriteLine("Finish -> Indexers");
     }

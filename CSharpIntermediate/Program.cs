@@ -7,6 +7,7 @@ namespace CSharpIntermediate
         static void Main(string[] args)
         {
             Section1.Run();
+            Section2.Run();
         }
     }
 }
