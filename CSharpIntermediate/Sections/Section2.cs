@@ -29,19 +29,74 @@ public class Section2
         }
     }
 
+    public class Logger
+    {
+        public void Log(string message)
+        {
+            Console.WriteLine(message);
+        }
+    }
+
+    public class DbMigrator
+    {
+        private readonly Logger _logger;
+
+        public DbMigrator(Logger logger)
+        {
+            _logger = logger;
+        }
+
+        public void Migrate()
+        {
+            _logger.Log("We are migrating ...");
+        }
+    }
+
+    public class Installer
+    {
+        private readonly Logger _logger;
+
+        public Installer(Logger logger)
+        {
+            _logger = logger;
+        }
+
+        public void Install()
+        {
+            _logger.Log("We are installing the application");
+        }
+    }
+
     public static void Run()
     {
         Inheritance();
+        Composition();
     }
 
     public static void Inheritance()
     {
         Console.WriteLine("Start -> Inheritance");
-        
+
         var text = new Text();
         text.Widht = 1;
         text.Copy(); //Output: Object copied to clipboard
 
         Console.WriteLine("Finish -> Inheritance");
+    }
+
+    private static void Composition()
+    {
+        Console.WriteLine("Start -> Composition");
+
+        var dbMigrator = new DbMigrator(new Logger());
+
+        var logger = new Logger();
+        var installer = new Installer(logger);
+
+        dbMigrator.Migrate();
+
+        installer.Install();
+
+        Console.WriteLine("Finish -> Composition");
     }
 }
