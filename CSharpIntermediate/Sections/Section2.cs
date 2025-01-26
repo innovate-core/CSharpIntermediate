@@ -3,7 +3,7 @@
 /// <summary>
 /// Association between Classes
 /// </summary>
-public class Section2
+public static class Section2
 {
     public class PresentationObject
     {

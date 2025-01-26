@@ -5,7 +5,7 @@ namespace CSharpIntermediate.Sections;
 /// <summary>
 /// Inheritance - Second Pillar of OOP
 /// </summary>
-public class Section3
+public static class Section3
 {
     public class Customer
     {
