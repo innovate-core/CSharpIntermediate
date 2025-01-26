@@ -1,5 +1,8 @@
 ﻿namespace CSharpIntermediate.Sections;
 
+/// <summary>
+/// Association between Classes
+/// </summary>
 public class Section2
 {
     public class PresentationObject
@@ -93,9 +96,9 @@ public class Section2
         var logger = new Logger();
         var installer = new Installer(logger);
 
-        dbMigrator.Migrate();
+        dbMigrator.Migrate(); //Output: We are migrating ...
 
-        installer.Install();
+        installer.Install(); //Output: We are installing the application
 
         Console.WriteLine("Finish -> Composition");
     }
