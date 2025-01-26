@@ -30,9 +30,36 @@ public class Section3
         }
     }
 
+    public class Vehicle
+    {
+        private readonly string _registrationNumber;
+
+        //public Vehicle()
+        //{
+        //    Console.WriteLine("Vehicle is being initialized.");
+        //}
+
+        public Vehicle(string registrationNumber)
+        {
+            _registrationNumber = registrationNumber;
+
+            Console.WriteLine("Vehicle is being initialized. {0}", registrationNumber);
+        }
+    }
+
+    public class Car : Vehicle
+    {
+        public Car(string registarionNumber)
+            : base(registarionNumber)
+        {
+            Console.WriteLine("Car is being initialized. {0}", registarionNumber);
+        }
+    }
+
     public static void Run()
     {
         AccessModifiers();
+        ConstructorsAndInheritance();
     }
 
     private static void AccessModifiers()
@@ -44,5 +71,14 @@ public class Section3
         //customer.CalculateRating();
 
         Console.WriteLine("Finish -> Access Modifiers");
+    }
+
+    private static void ConstructorsAndInheritance()
+    {
+        Console.WriteLine("Start -> Constructors And Inheritance");
+
+        var car = new Car("XYZ1234");
+
+        Console.WriteLine("Finish -> Constructors And Inheritance");
     }
 }
