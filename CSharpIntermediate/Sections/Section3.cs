@@ -1,5 +1,10 @@
-﻿namespace CSharpIntermediate.Sections;
+﻿using System.Collections;
 
+namespace CSharpIntermediate.Sections;
+
+/// <summary>
+/// Inheritance - Second Pillar of OOP
+/// </summary>
 public class Section3
 {
     public class Customer
@@ -56,10 +61,29 @@ public class Section3
         }
     }
 
+    public class Shape
+    {
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public void Draw()
+        {
+        }
+    }
+
+    public class Text : Shape
+    {
+        public int FontSize { get; set; }
+        public string FontName { get; set; }
+    }
+
     public static void Run()
     {
         AccessModifiers();
         ConstructorsAndInheritance();
+        UpcastingAndDowncasting();
     }
 
     private static void AccessModifiers()
@@ -80,5 +104,31 @@ public class Section3
         var car = new Car("XYZ1234");
 
         Console.WriteLine("Finish -> Constructors And Inheritance");
+    }
+
+    private static void UpcastingAndDowncasting()
+    {
+        Console.WriteLine("Start -> Upcasting And Downcasting");
+
+        //Upcasting
+        var text = new Text();
+        Shape shape = text;
+        text.Width = 200;
+        shape.Width = 100;
+        Console.WriteLine(text.Width); //Output: 100
+
+        StreamReader streamReader = new StreamReader(new MemoryStream());
+
+        var list = new ArrayList();
+        list.Add(1);
+        list.Add("Mykola");
+        list.Add(new Text());
+
+        //Downcasting
+        Shape shape1  = new Text();
+        Text text1 = (Text)shape1;
+
+
+        Console.WriteLine("Finish -> Upcasting And Downcasting");
     }
 }
