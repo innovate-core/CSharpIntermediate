@@ -59,7 +59,7 @@ public static class Section4
 
         public abstract void Draw();
 
-        public  void Copy()
+        public void Copy()
         {
             Console.WriteLine("Copy shape into clipboard.");
         }
@@ -96,10 +96,12 @@ public static class Section4
     {
         Console.WriteLine("Start -> Method Overriding");
 
-        var shapes = new List<Shape>();
-        shapes.Add(new Circle());
-        shapes.Add(new Rectangle());
-        shapes.Add(new Triangle());
+        var shapes = new List<Shape>
+        {
+            new Circle(),
+            new Rectangle(),
+            new Triangle()
+        };
 
         var canvas = new Canvas();
         canvas.DrawShapes(shapes);
@@ -114,7 +116,7 @@ public static class Section4
         var circle = new Circle1();
         circle.Draw();
 
-        var rectangle  = new Rectangle1();
+        var rectangle = new Rectangle1();
         rectangle.Draw();
 
         Console.WriteLine("Finish -> Abstract Classes and Members");
