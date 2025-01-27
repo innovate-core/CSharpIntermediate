@@ -28,7 +28,7 @@ public static class Section4
 
     public class Circle : Shape
     {
-        public override void Draw()
+        public sealed override void Draw()
         {
             Console.WriteLine("Draw a circle");
         }
@@ -36,7 +36,7 @@ public static class Section4
 
     public class Rectangle : Shape
     {
-        public override void Draw()
+        public sealed override void Draw()
         {
             Console.WriteLine("Draw a rectangle.");
         }
@@ -44,7 +44,7 @@ public static class Section4
 
     public class Triangle : Shape
     {
-        public override void Draw()
+        public sealed override void Draw()
         {
             Console.WriteLine("Draw a triangle.");
         }
@@ -59,7 +59,7 @@ public static class Section4
 
         public abstract void Draw();
 
-        public void Copy()
+        public  void Copy()
         {
             Console.WriteLine("Copy shape into clipboard.");
         }
