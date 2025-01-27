@@ -17,7 +17,7 @@ public static class Section4
 
     public class Canvas
     {
-        public void DrawShapes(List<Shape> shapes)
+        public static void DrawShapes(List<Shape> shapes)
         {
             foreach (var shape in shapes)
             {
@@ -59,15 +59,9 @@ public static class Section4
 
         public abstract void Draw();
 
-        public void Copy()
-        {
-            Console.WriteLine("Copy shape into clipboard.");
-        }
+        public static void Copy() => Console.WriteLine("Copy shape into clipboard.");
 
-        public void Select()
-        {
-            Console.WriteLine("Select the shape");
-        }
+        public static void Select() => Console.WriteLine("Select the shape");
     }
 
     public class Circle1 : Shape1
@@ -103,8 +97,7 @@ public static class Section4
             new Triangle()
         };
 
-        var canvas = new Canvas();
-        canvas.DrawShapes(shapes);
+        Canvas.DrawShapes(shapes);
 
         Console.WriteLine("Finish -> Method Overriding");
     }

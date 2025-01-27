@@ -7,7 +7,7 @@ public static class Section1
 {
     public class Person
     {
-        public string Name;
+        public string? Name;
 
         public void Introduce(string to)
         {
@@ -26,7 +26,7 @@ public static class Section1
     public class Customer
     {
         public int Id;
-        public string Name;
+        public string? Name;
         public readonly List<Order> Orders = new List<Order>();
 
         //public Customer()
@@ -72,7 +72,7 @@ public static class Section1
             Y = y;
         }
 
-        public void Move(Point newLocation)
+        public void Move(Point? newLocation)
         {
             if (newLocation is null)
                 throw new ArgumentNullException(nameof(newLocation));
@@ -112,8 +112,8 @@ public static class Section1
 
     public class User
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
         public DateTime Birthdate { get; private set; }
 
         public User(DateTime birthdate)
