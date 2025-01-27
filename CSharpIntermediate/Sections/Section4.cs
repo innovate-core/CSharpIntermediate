@@ -117,6 +117,6 @@ public static class Section4
         var rectangle  = new Rectangle1();
         rectangle.Draw();
 
-        Console.WriteLine("Finish -> 29. Abstract Classes and Members");
+        Console.WriteLine("Finish -> Abstract Classes and Members");
     }
 }
