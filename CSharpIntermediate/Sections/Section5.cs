@@ -133,10 +133,6 @@ public static class Section5
 
     //////////////////////////////////////////////////////////////////////////
 
-    public class Mail
-    {
-    }
-
     public class Message
     {
     }
@@ -155,14 +151,6 @@ public static class Section5
         public void Send(Message message)
         {
             Console.WriteLine("Sending mail...");
-        }
-    }
-
-    public class MailService
-    {
-        public void Send(Mail mail)
-        {
-            Console.WriteLine("Sending email...");
         }
     }
 
