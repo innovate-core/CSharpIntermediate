@@ -10,6 +10,7 @@ namespace CSharpIntermediate
             Section2.Run();
             Section3.Run();
             Section4.Run();
+            Section5.Run();
         }
     }
 }
